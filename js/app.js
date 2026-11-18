@@ -29,6 +29,13 @@ function renderProfile(profile) {
   document.getElementById("footer-name").textContent = profile.name;
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  const avatarEl = document.getElementById("profile-avatar");
+  if (avatarEl && profile.avatar) {
+    avatarEl.src = profile.avatar;
+    avatarEl.alt = `${profile.name} profile picture`;
+    avatarEl.style.display = "block";
+  }
+
   const socialContainer = document.getElementById("social-links");
   let linksHTML = "";
 
