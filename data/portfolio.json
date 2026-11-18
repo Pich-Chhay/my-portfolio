@@ -12,13 +12,13 @@
     {
       "role": "Computer Science Undergraduate (Year 3)",
       "organization": "University",
-      "period": "2024 - Present",
+      "period": "2025 - Present",
       "description": "Studying data structures, algorithms, databases, and software engineering principles."
     }
   ],
   "skills": [
-    { "category": "Languages", "items": ["Java", "Python", "JavaScript", "HTML5", "CSS3"] },
-    { "category": "Tools", "items": ["Git", "GitHub", "VS Code"] }
+    { "category": "Languages", "items": ["UX/UI", "IT Support", "C++"] },
+    { "category": "Tools", "items": ["Git", "GitHub", "VS Code", "Canva", "PhotoShop", "Illustrator", "CapCut", "Figma", "AI Tools", "IntelliJ IDEA"] }
   ],
   "projects": [
     {
