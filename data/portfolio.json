@@ -6,7 +6,9 @@
     "about": "I am currently a Year 3, Semester 2 Computer Science student passionate about software development. I enjoy learning modern web technologies, solving algorithmic problems, and building real-world projects that prepare me for a software engineering career.",
     "github": "https://github.com/Pich-Chhay",
     "linkedin": "https://www.linkedin.com/in/pich-chhay-103171341",
-    "email": "pichchhay63@gmail.com"
+    "email": "pichchhay63@gmail.com",
+    "phone": "+855 17 390 463",
+    "telegram": "https://t.me/CHHAY_POUNLEUPICH"
   },
   "experience": [
     {
@@ -25,7 +27,7 @@
       "title": "Personal Portfolio Website",
       "description": "A dynamic, JSON-driven developer portfolio built to showcase my coding journey.",
       "techStack": ["HTML5", "CSS3", "JavaScript", "JSON"],
-      "githubUrl": "https://github.com/yourusername/my-portfolio",
+      "githubUrl": "https://github.com/Pich-Chhay/my-portfolio.git",
       "liveUrl": ""
     }
   ],

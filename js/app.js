@@ -30,11 +30,26 @@ function renderProfile(profile) {
   document.getElementById("year").textContent = new Date().getFullYear();
 
   const socialContainer = document.getElementById("social-links");
-  socialContainer.innerHTML = `
-    <a href="${profile.github}" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="${profile.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a href="mailto:${profile.email}">Email</a>
-  `;
+  let linksHTML = "";
+
+  if (profile.github) {
+    linksHTML += `<a href="${profile.github}" target="_blank" rel="noopener noreferrer">GitHub</a>`;
+  }
+  if (profile.linkedin) {
+    linksHTML += `<a href="${profile.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a>`;
+  }
+  if (profile.telegram) {
+    linksHTML += `<a href="${profile.telegram}" target="_blank" rel="noopener noreferrer">Telegram</a>`;
+  }
+  if (profile.email) {
+    linksHTML += `<a href="mailto:${profile.email}">Email</a>`;
+  }
+  if (profile.phone) {
+    const cleanPhone = profile.phone.replace(/\s+/g, "");
+    linksHTML += `<a href="tel:${cleanPhone}">${profile.phone}</a>`;
+  }
+
+  socialContainer.innerHTML = linksHTML;
 }
 
 function renderExperience(experienceList) {
