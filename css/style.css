@@ -119,11 +119,10 @@ body {
   height: 170px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   border: 3px solid var(--accent);
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
   flex-shrink: 0;
-  image-rendering: -webkit-optimize-contrast;
 }
 
 /* General Sections */
