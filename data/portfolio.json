@@ -1,0 +1,33 @@
+{
+  "profile": {
+    "name": "CHHAY POUNLEUPICH",
+    "role": "Computer Science Student | Aspiring Software Engineer",
+    "bio": "Year 3 CS student focused on building clean, maintainable web applications.",
+    "about": "I am currently a Year 3, Semester 2 Computer Science student passionate about software development. I enjoy learning modern web technologies, solving algorithmic problems, and building real-world projects that prepare me for a software engineering career.",
+    "github": "https://github.com/Pich-Chhay",
+    "linkedin": "https://www.linkedin.com/in/pich-chhay-103171341",
+    "email": "pichchhay63@gmail.com"
+  },
+  "experience": [
+    {
+      "role": "Computer Science Undergraduate (Year 3)",
+      "organization": "University",
+      "period": "2024 - Present",
+      "description": "Studying data structures, algorithms, databases, and software engineering principles."
+    }
+  ],
+  "skills": [
+    { "category": "Languages", "items": ["Java", "Python", "JavaScript", "HTML5", "CSS3"] },
+    { "category": "Tools", "items": ["Git", "GitHub", "VS Code"] }
+  ],
+  "projects": [
+    {
+      "title": "Personal Portfolio Website",
+      "description": "A dynamic, JSON-driven developer portfolio built to showcase my coding journey.",
+      "techStack": ["HTML5", "CSS3", "JavaScript", "JSON"],
+      "githubUrl": "https://github.com/yourusername/my-portfolio",
+      "liveUrl": ""
+    }
+  ],
+  "certificates": []
+}
