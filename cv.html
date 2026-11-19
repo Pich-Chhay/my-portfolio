@@ -5,7 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV - CHHAY POUNLEUPICH</title>
   <style>
+    /* Default = Dark Mode (Matches Portfolio Default) */
     :root {
+      --body-bg: #090d16;
+      --paper-bg: #1e293b;
+      --primary: #f8fafc;
+      --accent: #38bdf8;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: #334155;
+    }
+
+    /* Light Mode (Matches Portfolio [data-theme="light"]) */
+    [data-theme="light"] {
+      --body-bg: #e2e8f0;
+      --paper-bg: #ffffff;
       --primary: #0f172a;
       --accent: #0284c7;
       --text: #1e293b;
@@ -21,23 +35,27 @@
 
     body {
       font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #e2e8f0;
+      background: var(--body-bg);
       color: var(--text);
       line-height: 1.5;
       padding: 2rem 1rem;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
-    /* Action Bar for HR / Visitor */
+    /* Action Bar */
     .action-bar {
       max-width: 210mm;
       margin: 0 auto 1rem auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: var(--primary);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      background: #0f172a;
       color: #fff;
       padding: 0.75rem 1.25rem;
       border-radius: 8px;
+      border: 1px solid #334155;
     }
 
     .action-bar a {
@@ -45,6 +63,28 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .btn-theme {
+      background: #1e293b;
+      color: #f8fafc;
+      border: 1px solid #475569;
+      padding: 0.55rem 0.9rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+    }
+
+    .btn-theme:hover {
+      border-color: #38bdf8;
     }
 
     .btn-download {
@@ -65,12 +105,13 @@
 
     /* A4 Paper Layout */
     .cv-page {
-      background: #ffffff;
+      background: var(--paper-bg);
       width: 210mm;
       min-height: 297mm;
       margin: 0 auto;
       padding: 16mm 18mm;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      transition: background 0.25s ease;
     }
 
     .cv-header {
@@ -160,10 +201,19 @@
       margin-bottom: 4px;
     }
 
-    /* Print / PDF Conversion Rules */
+    /* Always White Paper when Printing / Saving as PDF */
     @media print {
+      :root, [data-theme="light"] {
+        --body-bg: #ffffff !important;
+        --paper-bg: #ffffff !important;
+        --primary: #0f172a !important;
+        --accent: #0284c7 !important;
+        --text: #1e293b !important;
+        --muted: #475569 !important;
+        --border: #cbd5e1 !important;
+      }
       body {
-        background: none;
+        background: #ffffff !important;
         padding: 0;
       }
       .action-bar {
@@ -195,7 +245,10 @@
 <body>
   <div class="action-bar">
     <a href="index.html">&larr; Back to Portfolio</a>
-    <button class="btn-download" onclick="window.print()">Download / Save as PDF</button>
+    <div class="action-buttons">
+      <button class="btn-theme" id="cv-theme-toggle" onclick="toggleTheme()">☀️ Light</button>
+      <button class="btn-download" onclick="window.print()">Download / Save as PDF</button>
+    </div>
   </div>
 
   <main class="cv-page">
@@ -232,6 +285,31 @@
   </main>
 
   <script>
+    function toggleTheme() {
+      const htmlEl = document.documentElement;
+      const btn = document.getElementById("cv-theme-toggle");
+      const isLight = htmlEl.getAttribute("data-theme") === "light";
+
+      if (isLight) {
+        htmlEl.removeAttribute("data-theme");
+        btn.textContent = "☀️ Light";
+        localStorage.setItem("site-theme", "dark");
+      } else {
+        htmlEl.setAttribute("data-theme", "light");
+        btn.textContent = "🌙 Dark";
+        localStorage.setItem("site-theme", "light");
+      }
+    }
+
+    (function initTheme() {
+      const savedTheme = localStorage.getItem("site-theme");
+      const btn = document.getElementById("cv-theme-toggle");
+      if (savedTheme === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+        if (btn) btn.textContent = "🌙 Dark";
+      }
+    })();
+
     document.addEventListener("DOMContentLoaded", async () => {
       try {
         const res = await fetch("data/portfolio.json");
@@ -243,7 +321,6 @@
         document.getElementById("cv-role").textContent = p.role;
         document.getElementById("cv-about").textContent = p.about;
 
-        // Contact Links
         const contacts = [];
         if (p.location) contacts.push(`<span>${p.location}</span>`);
         if (p.phone) contacts.push(`<a href="tel:${p.phone.replace(/\s+/g, '')}">${p.phone}</a>`);
@@ -254,7 +331,6 @@
         contacts.push(`<a href="https://pich-chhay.github.io/my-portfolio/" target="_blank">Portfolio</a>`);
         document.getElementById("cv-contact").innerHTML = contacts.join(" &bull; ");
 
-        // Education / Experience
         const eduContainer = document.getElementById("cv-education");
         eduContainer.innerHTML = (data.experience || []).map(item => `
           <div class="item">
@@ -267,13 +343,11 @@
           </div>
         `).join("");
 
-        // Skills
         const skillsContainer = document.getElementById("cv-skills");
         skillsContainer.innerHTML = (data.skills || []).map(group => `
           <p><strong>${group.category}:</strong> ${group.items.join(", ")}</p>
         `).join("");
 
-        // Projects
         const projContainer = document.getElementById("cv-projects");
         projContainer.innerHTML = (data.projects || []).map(proj => `
           <div class="item">
@@ -285,7 +359,6 @@
           </div>
         `).join("");
 
-        // Certificates
         const certContainer = document.getElementById("cv-certificates");
         if (data.certificates && data.certificates.length > 0) {
           certContainer.innerHTML = data.certificates.map(cert => `
