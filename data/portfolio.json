@@ -52,11 +52,11 @@
       "liveUrl": "https://pich-chhay.github.io/my-portfolio/"
     },
     {
-      "title": "PichAssistant — AI Study Assistant Telegram Bot",
-      "description": "An AI-powered Telegram study assistant built with Python and Gemini API to deliver interactive lessons, answer student questions, and manage learning progress with database persistence.",
-      "techStack": ["Python", "Telegram Bot API", "Gemini AI", "SQLite"],
+      "title": "PichNetStudyBot — AI Study Assistant Telegram Bot",
+      "description": "An AI-powered Telegram study assistant built with Python, Google Gemini API, and SQLite. Features structured interactive lessons, context-aware AI Q&A, and user progress tracking, deployed on Render using event-driven Webhooks for 24/7 cloud availability. (Note: First response may take ~30s to wake the free cloud instance).",
+      "techStack": ["Python", "python-telegram-bot", "Google Gemini API", "SQLite", "Webhooks", "Render"],
       "githubUrl": "https://github.com/Pich-Chhay/PichNetStudyBot",
-      "liveUrl": ""
+      "liveUrl": "https://t.me/PichNetStudyBot"
     }
   ],
   "certificates": [
