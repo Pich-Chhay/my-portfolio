@@ -96,9 +96,14 @@ function renderExperience(experienceList) {
   experienceList.forEach((item) => {
     const card = document.createElement("article");
     card.className = "card";
+
+    const orgDisplay = item.organizationUrl
+      ? `<a href="${item.organizationUrl}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">${item.organization}</a>`
+      : item.organization;
+
     card.innerHTML = `
       <h3>${item.role}</h3>
-      <p class="subtitle">${item.organization} &bull; ${item.period}</p>
+      <p class="subtitle">${orgDisplay} &bull; ${item.period}</p>
       <p>${item.description}</p>
     `;
     container.appendChild(card);

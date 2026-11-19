@@ -1,10 +1,10 @@
 {
   "profile": {
     "name": "CHHAY POUNLEUPICH",
-    "role": "Computer Science Student | Aspiring Software Engineer",
+    "role": "Computer Science Student | ICT Teacher | Aspiring Software Engineer",
     "avatar": "assets/images/pich_600x600.jpg",
-    "bio": "Year 3 CS student focused on building clean, maintainable web applications.",
-    "about": "I am currently a Year 3, Semester 2 Computer Science student passionate about software development. I enjoy learning modern web technologies, solving algorithmic problems, and building real-world projects that prepare me for a software engineering career.",
+    "bio": "Year 3 CS student and ICT Teacher with 1.5 years of experience building clean web applications and teaching technology.",
+    "about": "I am currently a Year 3, Semester 2 Computer Science student and an ICT Teacher at True Vision International School of Cambodia with 1 year and 6 months of teaching experience. Passionate about software development, I enjoy building modern web applications, solving algorithmic problems, and mentoring students in coding and robotics.",
     "github": "https://github.com/Pich-Chhay",
     "linkedin": "https://www.linkedin.com/in/pich-chhay-103171341",
     "email": "pichchhay63@gmail.com",
@@ -13,24 +13,63 @@
   },
   "experience": [
     {
+      "type": "work",
+      "role": "ICT Teacher",
+      "organization": "True Vision International School of Cambodia",
+      "organizationUrl": "https://truevisions-cambodia.com/",
+      "period": "May 2025 - Present (1 Year 6 Months)",
+      "description": "Teaching Information and Communication Technology (ICT), fundamental programming, robotics/coding (Avishkaar), and digital literacy while providing classroom IT support."
+    },
+    {
+      "type": "education",
       "role": "Computer Science Undergraduate (Year 3)",
-      "organization": "University",
+      "organization": "BMU University",
+      "organizationUrl": "https://www.bonamary-u.com/",
       "period": "2025 - Present",
       "description": "Studying data structures, algorithms, databases, and software engineering principles."
     }
   ],
   "skills": [
-    { "category": "Languages", "items": ["UX/UI", "IT Support", "C++"] },
-    { "category": "Tools", "items": ["Git", "GitHub", "VS Code", "Canva", "PhotoShop", "Illustrator", "CapCut", "Figma", "AI Tools", "IntelliJ IDEA"] }
+    {
+      "category": "Programming & Web",
+      "items": ["HTML5", "CSS3", "JavaScript", "Java", "JSON", "Kotlin", "C", "C++", "C#"]
+    },
+    {
+      "category": "Design & Tools",
+      "items": ["Figma", "UX/UI Design", "Git", "GitHub", "VS Code", "VS Installer", "Adobe Photoshop", "Adobe Illustrator", "Canva", "CapCut", "IntelliJ IDEA", "AI"]
+    },
+    {
+      "category": "IT & Training",
+      "items": ["ICT Teacher", "Avishkaar Robotics & Coding", "IT Support"]
+    }
   ],
   "projects": [
     {
       "title": "Personal Portfolio Website",
-      "description": "A dynamic, JSON-driven developer portfolio built to showcase my coding journey.",
+      "description": "A dynamic, JSON-driven developer portfolio and A4 CV generator built to showcase my coding journey.",
       "techStack": ["HTML5", "CSS3", "JavaScript", "JSON"],
-      "githubUrl": "https://github.com/Pich-Chhay/my-portfolio.git",
-      "liveUrl": ""
+      "githubUrl": "https://github.com/Pich-Chhay/my-portfolio",
+      "liveUrl": "https://pich-chhay.github.io/my-portfolio/"
     }
   ],
-  "certificates": []
+  "certificates": [
+    {
+      "title": "UX/UI Design",
+      "issuer": "Training / Certification Program",
+      "date": "2025",
+      "credentialUrl": ""
+    },
+    {
+      "title": "IT Support",
+      "issuer": "Training / Certification Program",
+      "date": "2025",
+      "credentialUrl": ""
+    },
+    {
+      "title": "Avishkaar Trainer",
+      "issuer": "Avishkaar",
+      "date": "2025",
+      "credentialUrl": ""
+    }
+  ]
 }
