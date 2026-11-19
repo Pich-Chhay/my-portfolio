@@ -32,7 +32,7 @@
   "skills": [
     {
       "category": "Programming & Web",
-      "items": ["HTML5", "CSS3", "JavaScript", "Java", "JSON", "Kotlin", "C", "C++", "C#"]
+      "items": ["HTML5", "CSS3", "JavaScript", "Java", "JSON", "Kotlin", "C", "C++", "C#", "Python", "PHP", "SQL", "MySQL", "SQLite", "Node.js", "Express.js", "React.js", "Bootstrap"]
     },
     {
       "category": "Design & Tools",
@@ -50,6 +50,13 @@
       "techStack": ["HTML5", "CSS3", "JavaScript", "JSON"],
       "githubUrl": "https://github.com/Pich-Chhay/my-portfolio",
       "liveUrl": "https://pich-chhay.github.io/my-portfolio/"
+    },
+    {
+      "title": "PichAssistant — AI Study Assistant Telegram Bot",
+      "description": "An AI-powered Telegram study assistant built with Python and Gemini API to deliver interactive lessons, answer student questions, and manage learning progress with database persistence.",
+      "techStack": ["Python", "Telegram Bot API", "Gemini AI", "SQLite"],
+      "githubUrl": "https://github.com/Pich-Chhay/PichNetStudyBot",
+      "liveUrl": ""
     }
   ],
   "certificates": [
