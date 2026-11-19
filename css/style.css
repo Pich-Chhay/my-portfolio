@@ -114,6 +114,26 @@ body {
   gap: 2.25rem;
 }
 
+.hero-actions {
+  margin-top: 1.25rem;
+}
+
+.btn-cv {
+  display: inline-block;
+  background: var(--accent);
+  color: #0f172a;
+  font-weight: 700;
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-cv:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
 .avatar {
   width: 170px;
   height: 170px;
