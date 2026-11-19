@@ -329,6 +329,52 @@ body {
   font-size: 0.85rem;
 }
 
+/* Light Mode Variables for Portfolio */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #e2e8f0;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent: #0284c7;
+  --accent-hover: #0369a1;
+  --border-color: #cbd5e1;
+  --pill-bg: rgba(2, 132, 199, 0.1);
+}
+
+/* កែប្រែ Navbar និង Hero H1 ឱ្យដើរស្អាតទាំង Dark និង Light Mode */
+[data-theme="light"] .navbar {
+  background-color: rgba(248, 250, 252, 0.9);
+}
+
+[data-theme="light"] .hero-section h1 {
+  background: linear-gradient(90deg, #0f172a, #0284c7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .btn-cv {
+  color: #ffffff;
+}
+
+/* Style ប៊ូតុង Toggle លើ Navbar */
+.btn-theme-nav {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.btn-theme-nav:hover {
+  border-color: var(--accent);
+}
+
 /* Mobile Responsive */
 @media (max-width: 600px) {
   .hero-content {

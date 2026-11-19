@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  initPortfolioTheme();
   loadPortfolioData();
 });
 
@@ -17,6 +18,33 @@ async function loadPortfolioData() {
     renderCertificates(data.certificates);
   } catch (error) {
     console.error("Failed to load portfolio data:", error);
+  }
+}
+
+function initPortfolioTheme() {
+  const toggleBtn = document.getElementById("portfolio-theme-toggle");
+  const htmlEl = document.documentElement;
+  const savedTheme = localStorage.getItem("site-theme");
+
+  // កំណត់ Theme ពេលបើកទំព័រដំបូង
+  if (savedTheme === "light") {
+    htmlEl.setAttribute("data-theme", "light");
+    if (toggleBtn) toggleBtn.textContent = "🌙 Dark";
+  }
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      const isLight = htmlEl.getAttribute("data-theme") === "light";
+      if (isLight) {
+        htmlEl.removeAttribute("data-theme");
+        toggleBtn.textContent = "☀️ Light";
+        localStorage.setItem("site-theme", "dark");
+      } else {
+        htmlEl.setAttribute("data-theme", "light");
+        toggleBtn.textContent = "🌙 Dark";
+        localStorage.setItem("site-theme", "light");
+      }
+    });
   }
 }
 
@@ -137,10 +165,13 @@ function renderCertificates(certificates) {
   certificates.forEach((cert) => {
     const card = document.createElement("article");
     card.className = "card";
+    const verifyLink = cert.credentialUrl
+      ? `<a href="${cert.credentialUrl}" target="_blank" rel="noopener noreferrer">Verify Credential</a>`
+      : "";
     card.innerHTML = `
       <h3>${cert.title}</h3>
       <p>${cert.issuer} &bull; ${cert.date}</p>
-      <a href="${cert.credentialUrl}" target="_blank" rel="noopener noreferrer">Verify Credential</a>
+      ${verifyLink}
     `;
     grid.appendChild(card);
   });
